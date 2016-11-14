@@ -2,7 +2,9 @@
 
 Default Toolbar Template.
 
-This module has no options, it only includes templates and styles.
+|Option|Description|
+|------|-----------|
+|no options| - |
 
 To target toolbar change the target on the "Results - Toolbar" template:
 

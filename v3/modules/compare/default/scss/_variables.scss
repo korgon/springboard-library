@@ -1,0 +1,75 @@
+// Compare Default Variables
+//
+// 01. Change variables. Yay!
+// 02. Variables with true/false values can turn on or off a style.
+// 03. Values set to '' can be left blank so they don't generate extra styles.
+
+// Colors
+$compare-color-01: #ffffff; // button font color
+$compare-color-02: #ffffff; // button icon color
+$compare-color-03: #49669e; // default button color
+$compare-color-04: #16336b; // default button hover color
+$compare-color-05: #356931; // selected button color
+$compare-color-06: #023600; // selected button hover color
+$compare-color-07: #999999; // disabled button color
+$compare-color-08: #3a4d71; // product box color
+$compare-color-09: #49669e; // product box button color
+$compare-color-10: #16336b; // product box button hover color
+$compare-color-11: #ffffff; // product box button font color
+$compare-color-12: #333333; // modal border color
+$compare-color-13: #ffffff; // modal background color
+$compare-color-14: #49669e; // header color
+$compare-color-15: #333333; // close button border color
+$compare-color-16: #49669e; // close button color
+$compare-color-17: #16336b; // close button hover color
+$compare-color-18: #333333; // item row border color
+$compare-color-19: #333333; // item font color
+$compare-color-20: #49669e; // item link color
+$compare-color-21: #49669e; // item label font color
+
+// Fonts
+$compare-font-01: tahoma, arial, sans-serif;
+$compare-font-02: garamond, 'times new roman', serif;
+$compare-font-size: 12px;
+
+// Button
+$compare-button-padding: 5px 20px;
+
+// Product Box
+$compare-box-bottom: 20px;
+$compare-box-right: 20px;
+$compare-box-size: 56px;
+$compare-box-button-font-size: 15px;
+$compare-box-button-padding: 0 30px;
+
+// Modal Window
+$compare-modal-width: 900px;
+$compare-modal-overlay: rgba(0, 0, 0, 0.8);
+
+// Modal Window - Header
+$compare-header-font-size: $compare-font-size + 5;
+$compare-header-weight: bold;
+
+// Modal Window - Items
+$compare-item-font-size: $compare-font-size;
+$compare-item-container-height: 400px;
+$compare-item-width: 200px;
+$compare-item-image-height: 150px;
+$compare-item-label-weight: bold;
+$compare-item-label-font-size: $compare-font-size + 3;
+
+// Breakpoint 1
+$compare-bp1-width: 1099;
+$compare-bp1-item-width: 130px;
+
+// Breakpoint 2
+$compare-bp2-width: 767;
+$compare-bp2-item-width: 100px;
+$compare-bp2-item-image-height: 100px;
+
+// Breakpoint 3
+$compare-bp3-width: 567;
+$compare-bp3-item-width: 80px;
+
+// Breakpoint 4
+$compare-bp4-width: 480;

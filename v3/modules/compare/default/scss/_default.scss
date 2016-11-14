@@ -1,0 +1,326 @@
+/* slideout default scss */
+@import "._variables.scss";
+@import "_variables.scss";
+@import "_mixins.scss";
+
+$compare_module: true;
+
+/* Compare - Button */
+.searchspring-compare-button {
+	a {
+		color: $compare-color-01;
+		padding: $compare-button-padding;
+		cursor: pointer;
+		text-align: center;
+
+		&,
+		.compare-label,
+		.compare-label:before {
+			@include inline-block(middle);
+		}
+
+		.compare-label {
+			position: relative;
+			padding: 0 0 0 18px;
+
+			&:before {
+				content: '';
+				@include sizing(12px, 12px);
+				@include background-svg-properties;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				margin: auto;
+			}
+		}
+
+		&.compare-add {
+			background: $compare-color-03;
+
+			&:hover {
+				background: $compare-color-04;
+			}
+
+			.compare-label:before {
+				@include background-svg($viewport-width: 25, $fill: $compare-color-02, $path: 'M25.143 13.143v3.43q0 .713-.5 1.213t-1.214.5H16v7.43q0 .713-.5 1.213t-1.214.5h-3.43q-.713 0-1.213-.5t-.5-1.215v-7.43h-7.43q-.713 0-1.213-.5T0 16.573v-3.43q0-.713.5-1.213t1.214-.5h7.43V4q0-.714.5-1.214t1.213-.5h3.43q.713 0 1.213.5T16 4v7.43h7.43q.713 0 1.213.5t.5 1.213z');
+			}
+		}
+
+		&.compare-selected {
+			background: $compare-color-05;
+
+			&:hover {
+				background: $compare-color-06;
+			}
+
+			.compare-label:before {
+				@include background-svg($fill: $compare-color-02, $path: 'M29.839 10.107q0 0.714-0.5 1.214l-15.357 15.357q-0.5 0.5-1.214 0.5t-1.214-0.5l-8.893-8.893q-0.5-0.5-0.5-1.214t0.5-1.214l2.429-2.429q0.5-0.5 1.214-0.5t1.214 0.5l5.25 5.268 11.714-11.732q0.5-0.5 1.214-0.5t1.214 0.5l2.429 2.429q0.5 0.5 0.5 1.214z');
+			}
+		}
+
+		&.compare-disabled {
+			background: $compare-color-07;
+			cursor: not-allowed;
+
+			.compare-label:before {
+				@include background-svg($viewport-width: 27, $fill: $compare-color-02, $path: 'M23.43 15.946q0-2.875-1.555-5.268L8.41 24.124q2.447 1.59 5.305 1.59 1.982 0 3.777-.778t3.098-2.08 2.07-3.116.77-3.795zm-17.84 5.34L19.07 7.822q-2.41-1.625-5.356-1.625-2.643 0-4.875 1.304t-3.537 3.555T4 15.948q0 2.893 1.588 5.34zm21.84-5.34q0 2.804-1.09 5.357t-2.92 4.393-4.375 2.93-5.33 1.088-5.33-1.09-4.375-2.928-2.92-4.393T0 15.946t1.09-5.348 2.92-4.384 4.375-2.93 5.33-1.088 5.33 1.09 4.375 2.928 2.92 4.384 1.09 5.348z');
+			}
+		}
+	}
+}
+/* Compare - Product Box */
+.searchspring-compare-box {
+	position: fixed;
+	bottom: $compare-box-bottom;
+	right: $compare-box-bottom;
+	z-index: 999;
+	padding: 5px;
+	background: $compare-color-08;
+
+	.compare-button,
+	.compare-products,
+	.compare-products li {
+		@include inline-block(middle);
+	}
+
+	.compare-button {
+		@include sizing(auto, $compare-box-size);
+		line-height: $compare-box-size;
+
+		a {
+			display: block;
+			@include sizing(100%, 100%);
+			padding: $compare-box-button-padding;
+			background: $compare-color-09;
+			color: $compare-color-11;
+			cursor: pointer;
+			font-size: $compare-box-button-font-size;
+
+			&:hover {
+				background: $compare-color-10;
+			}
+		}
+	}
+
+	.compare-products {
+		&,
+		& li {
+			list-style: none;
+		}
+
+		& {
+			margin: 0 -2.5px;
+			padding: 0;
+
+			li {
+				position: relative;
+				@include sizing($compare-box-size, $compare-box-size);
+				padding: 3px;
+				margin: 0 2.5px;
+				background: #ffffff;
+
+				.compare-image {
+					@include sizing(100%, 0);
+					padding: 0 0 100%;
+					text-align: center;
+					overflow: hidden;
+
+					img {
+						max-width: 100%;
+						max-height: $compare-box-size - 6;
+					}
+				}
+
+				.compare-remove {
+					display: none;
+					@include sizing(100%, 100%);
+					background-color: rgba(0,0,0,0.65);
+					background-size: 65% auto;
+					@include background-svg-properties;
+					@include background-svg($viewport-width: 25, $fill: #ffffff, $path: 'M23.18 23.607q0 .714-.5 1.214l-2.43 2.43q-.5.5-1.214.5t-1.214-.5L12.572 22l-5.25 5.25q-.5.5-1.214.5t-1.214-.5l-2.43-2.43q-.5-.5-.5-1.213t.5-1.214l5.25-5.25-5.25-5.25q-.5-.5-.5-1.214t.5-1.215l2.43-2.43q.5-.5 1.214-.5t1.214.5l5.25 5.25 5.25-5.25q.5-.5 1.214-.5t1.214.5l2.43 2.43q.5.5.5 1.214t-.5 1.213l-5.25 5.25 5.25 5.25q.5.5.5 1.214z');
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 2;
+					cursor: pointer;
+				}
+
+				&:hover .compare-remove {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+/* Compare - Modal Window */
+#searchspring-compare {
+	.compare-overlay,
+	.compare-wrapper {
+		position: fixed;
+	}
+
+	.compare-overlay {
+		background-color: $compare-modal-overlay;
+		@include sizing(100%, 100%);
+		top: 0;
+		left: 0;
+		z-index: 1001;
+		overflow: hidden;
+	}
+
+	.compare-wrapper {
+		top: 120px;
+		left: 0;
+		right: 0;
+		z-index: 1002;
+		margin: auto;
+		text-align: center;
+
+		.compare-results {
+			@include inline-block(middle);
+			background: $compare-color-13;
+			border: 1px solid $compare-color-12;
+			text-align: left;
+			padding: 10px;
+			font-family: $compare-font-01;
+			font-size: $compare-item-font-size;
+			line-height: $compare-item-font-size + 6;
+
+			.compare-header {
+				position: relative;
+
+				h3 {
+					font-family: $compare-font-02;
+					font-weight: $compare-header-weight;
+					font-size: $compare-header-font-size;
+					color: $compare-color-14;
+				}
+
+				.compare-close {
+					@include sizing(30px, 30px);
+					@include border-radius(100%);
+					overflow: hidden;
+					position: absolute;
+					right: -20px;
+					top: -20px;
+					@include box-shadow(0 0 0 1px, $compare-color-15);
+					border: 2px solid #fff;
+					background: $compare-color-16;
+					cursor: pointer;
+
+					&:hover {
+						background: $compare-color-17;
+					}
+
+					&:before {
+						content: '';
+						display: block;
+						@include sizing(100%, 100%);
+						background-size: 85% auto;
+						@include background-svg-properties;
+						@include background-svg($viewport-width: 25, $fill: #ffffff, $path: 'M23.18 23.607q0 .714-.5 1.214l-2.43 2.43q-.5.5-1.214.5t-1.214-.5L12.572 22l-5.25 5.25q-.5.5-1.214.5t-1.214-.5l-2.43-2.43q-.5-.5-.5-1.213t.5-1.214l5.25-5.25-5.25-5.25q-.5-.5-.5-1.214t.5-1.215l2.43-2.43q.5-.5 1.214-.5t1.214.5l5.25 5.25 5.25-5.25q.5-.5 1.214-.5t1.214.5l2.43 2.43q.5.5.5 1.214t-.5 1.213l-5.25 5.25 5.25 5.25q.5.5.5 1.214z');
+					}
+				}
+			}
+
+			.compare-items {
+				max-height: $compare-item-container-height;
+				overflow-y: auto;
+
+				.compare-row {
+					@include clearfix( '&');
+					border-bottom: 1px solid $compare-color-18;
+
+					&:last-child {
+						border-bottom: none;
+					}
+
+					& > div {
+						width: $compare-item-width;
+						float: left;
+						min-height: 1px;
+						padding: 5px;
+						color: $compare-color-19;
+
+						a {
+							color: $compare-color-20;
+
+							&:hover {
+								color: $compare-color-19;
+							}
+						}
+					}
+
+					.compare-image .image-wrapper {
+						display: table;
+						table-layout: fixed;
+						@include sizing(100%, $compare-item-image-height);
+
+						a {
+							display: table-cell;
+							vertical-align: middle;
+							text-align: center;
+
+							img {
+								max-height: $compare-item-image-height;
+								max-width: 100%;
+							}
+						}
+					}
+
+					.compare-label {
+						font-family: $compare-font-02;
+						font-weight: $compare-item-label-weight;
+						font-size: $compare-item-label-font-size;
+						color: $compare-color-21;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Compare - Breakpoint 1 (default: 1099) */
+@include respond($compare-bp1-width) {
+	#searchspring-compare .compare-wrapper .compare-results .compare-items .compare-row > div {
+		width: $compare-bp1-item-width;
+	}
+}
+/* Compare - Breakpoint 2 (default: 767) */
+@include respond($compare-bp2-width) {
+	#searchspring-compare .compare-wrapper .compare-results .compare-items .compare-row {
+		& > div {
+			width: $compare-bp2-item-width;
+		}
+
+		.compare-image .image-wrapper {
+			height: $compare-bp2-item-image-height;
+
+			a {
+				img {
+					max-height: $compare-bp2-item-image-height;
+				}
+			}
+		}
+
+		.compare-label {
+			font-size: $compare-item-label-font-size - 3;
+		}
+	}
+}
+/* Compare - Breakpoint 3 (default: 567) */
+@include respond($compare-bp3-width) {
+	#searchspring-compare .compare-wrapper .compare-results .compare-items .compare-row > div {
+		width: $compare-bp3-item-width;
+	}
+}
+/* Compare - Breakpoint 3 (default: 480) */
+@include respond($compare-bp4-width) {
+	#searchspring-compare,
+	.searchspring-compare-box,
+	.searchspring-compare-button {
+		display: none !important;
+	}
+}

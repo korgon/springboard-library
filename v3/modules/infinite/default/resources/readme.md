@@ -2,7 +2,9 @@
 
 Add infinite scroll to the site.
 
-This module has no options.
+|Option|Description|
+|------|-----------|
+|no options| - |
 
 ```js
 this.importer.include('infinite');

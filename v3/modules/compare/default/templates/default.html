@@ -1,0 +1,67 @@
+<!-- Compare Button -->
+<script type="text/ss-template" target=".searchspring-compare-button">
+	<a ng-click="compare.toggle(result)" ng-class="{'compare-add': !compare.full && !compare.has(result), 'compare-selected': compare.has(result), 'compare-disabled': compare.full && !compare.has(result)}">
+	<span ng-if="!compare.full && !compare.has(result)" class="compare-label">Compare Product</span>
+		<span ng-if="compare.has(result)" class="compare-label">Added to Compare</span>
+		<span ng-if="compare.full && !compare.has(result)" class="compare-label">Cannot Compare</span>
+	</a>
+</script>
+
+<!-- Compare Product Box -->
+<script type="text/ss-template" target=".searchspring-compare-box">
+	<div class="compare-button">
+		<a ng-click="compare.compare() && (compare.open = true);">Compare</a>
+	</div>
+	<ul class="compare-products">
+		<li ng-repeat="selected in compare(4).selected track by selected.uid" id="compare-product-{{ selected.uid }}">
+			<div class="compare-image">
+				<img ng-src="{{ selected.thumbnailImageUrl ? selected.thumbnailImageUrl : '//cdn.searchspring.net/ajax_search/img/default_image.png' }}" onerror="this.src='//cdn.searchspring.net/ajax_search/img/default_image.png';" alt="{{ result.name }}" title="{{ result.name }}" />
+			</div>
+			<a class="compare-remove" ng-click="compare.toggle(selected)"></a>
+		</li>
+	</ul>
+</script>
+
+<!-- Compare Modal -->
+<script type="text/ss-template" target="#searchspring-compare">
+	<div class="compare-wrapper" ng-click="compare.open = false">
+		<div class="compare-results" ng-click="$event.stopPropagation()">
+			<div class="compare-header">
+				<h3>Compare Items</h3>
+				<button ng-click="compare.open = false" type="button" class="compare-close" title="Close (Esc)"></button>
+			</div>
+			<div class="compare-items">
+				<div class="compare-row">
+					<div class="spacer"></div>
+					<div class="compare-image" ng-repeat="result in compare.results">
+						<div class="image-wrapper">
+							<a href="{{ result.url }}" intellisuggest>
+								<img ng-src="{{ result.thumbnailImageUrl ? result.thumbnailImageUrl : '//cdn.searchspring.net/ajax_search/img/default_image.png' }}" onerror="this.src='//cdn.searchspring.net/ajax_search/img/default_image.png';" alt="{{ result.name }}" title="{{ result.name }}" />
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="compare-row">
+					<div class="spacer"></div>
+					<div class="compare-data item-name" ng-repeat="result in compare.results">
+						<a href="{{ result.url }}" intellisuggest>{{ result.name }}</a>
+					</div>
+				</div>
+				<div class="compare-row">
+					<div class="compare-label">Price</div>
+					<div class="compare-data item-price" ng-repeat="result in compare.results">
+						{{ (result.price * 1) ? ('$'+ (result.price | number:2)) : '---' }}
+					</div>
+				</div>
+				<div class="compare-row" ng-repeat="field in compare.fields">
+					<div class="compare-label">{{ field.label }}</div>
+					<div class="compare-data" ng-repeat="result in compare.results" ng-init="fieldArray = [result[field.key]]">
+						<span ng-bind-html="fieldArray.join(', ') || '---' | trusted"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="compare-overlay" ng-click="compare.open = false"></div>
+</script>

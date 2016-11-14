@@ -27,7 +27,11 @@
 
 		<div id="searchspring-merch_footer" ss-merchandising="footer"></div>
 	</div>
+
 	<div ng-if="pagination.totalResults === 0" class="searchspring-no_results"></div>
+
+	<div ng-if="compare.active && !compare.open" class="searchspring-compare-box"></div>
+	<div ng-if="compare.open && compare.results.length >= 2" id="searchspring-compare"></div>
 </script>
 
 <!-- Results - Items -->
@@ -46,6 +50,8 @@
 		<p ng-if="(result.msrp * 1) <= (result.price * 1) || !result.msrp">
 			${{ result.price | number:2 }}
 		</p>
+
+		<div class="searchspring-compare-button"></div>
 	</div>
 </script>
 

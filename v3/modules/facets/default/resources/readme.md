@@ -2,7 +2,9 @@
 
 Default Facets
 
-This module has no options, it only includes templates and styles.
+|Option|Description|
+|------|-----------|
+|no options| - |
 
 To target facet container change the target on the "Facets and Filter Summary" template:
 

@@ -2,7 +2,9 @@
 
 Add ability to use a slider for facets.
 
-This module has no options.
+|Option|Description|
+|------|-----------|
+|no options| - |
 
 ```js
 this.importer.include('facet-slider');
