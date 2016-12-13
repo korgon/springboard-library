@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "default autocomplete style",
 	"author": "searchspring",
+	"requires": ["v3/mixins/default"],
 	"variables": {
 		"input": {
 			"value": "input.searchspring-ac",

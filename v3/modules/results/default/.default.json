@@ -2,5 +2,6 @@
 	"type": "v3/results/default",
 	"version": "1.0.0",
 	"description": "default results theme",
-	"author": "searchspring"
+	"author": "searchspring",
+	"requires": ["v3/mixins/default"]
 }

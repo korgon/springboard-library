@@ -1,0 +1,8 @@
+{
+	"type": "v3/mixins",
+	"version": "1.0.0",
+	"priority": 1,
+	"description": "collection of scss mixins",
+	"enabled": true,
+	"theme": null
+}

@@ -2,5 +2,6 @@
 	"type": "v3/compare/default",
 	"version": "1.0.0",
 	"description": "default compare style",
-	"author": "searchspring"
+	"author": "searchspring",
+	"requires": ["v3/mixins/default"]
 }

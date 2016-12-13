@@ -1,0 +1,122 @@
+/* facets skelton scss */
+@import "._variables.scss";
+@import "_variables.scss";
+
+$facets_module: true;
+
+// facet summary
+@if $facets-summary-on == true {
+	.searchspring-summary {
+		.searchspring-summary_title {
+
+		}
+		.summary-container {
+			ul {
+				@if $facets-summary-style == style1 {
+					margin: 0 -2.5px 5px -2.5px;
+				}
+				li {
+					@if $facets-summary-style == style1 {
+						margin: 0 2.5px 5px 2.5px;
+						@include inline-block(middle);
+						border-radius: 5px;
+						overflow: hidden;
+					}
+					a {
+						position: relative;
+						@include inline-block(top);
+						@if $facets-summary-style == style1 {
+							padding: $facets-summary-style1-padding;
+							@include sizing(100%, 100%);
+							background: $facets-color-01;
+							color: $facets-color-03;
+							&:hover {
+								background: $facets-color-02;
+							}
+						} @else if $facets-summary-style == style2 {
+							padding: $facets-summary-style2-padding;
+							&:hover:before {
+								background-color: $facets-color-02;
+							}
+						}
+						&:before {
+							content: '';
+							display: block;
+							position: absolute;
+							@include background-svg($viewport-width: 25, $fill: $facets-color-04, $path: 'M23.18 23.607q0 .714-.5 1.214l-2.43 2.43q-.5.5-1.214.5t-1.214-.5L12.572 22l-5.25 5.25q-.5.5-1.214.5t-1.214-.5l-2.43-2.43q-.5-.5-.5-1.213t.5-1.214l5.25-5.25-5.25-5.25q-.5-.5-.5-1.214t.5-1.215l2.43-2.43q.5-.5 1.214-.5t1.214.5l5.25 5.25 5.25-5.25q.5-.5 1.214-.5t1.214.5l2.43 2.43q.5.5.5 1.214t-.5 1.213l-5.25 5.25 5.25 5.25q.5.5.5 1.214z');
+							@include background-svg-properties;
+							@if $facets-summary-style == style1 {
+								@include sizing($facets-summary-style1-size, $facets-summary-style1-size);
+								top: $facets-summary-style1-top;
+								left: $facets-summary-style1-left;
+								background-color: transparent
+							} @else if $facets-summary-style == style2 {
+								@include sizing($facets-summary-style2-size, $facets-summary-style2-size);
+								top: $facets-summary-style2-top;
+								left: $facets-summary-style2-left;
+								border-radius: 100%;
+								background-color: $facets-color-01;
+								background-size: 55% auto;
+								overflow: hidden;
+							}
+						}
+						.summary-label {
+							font-weight: bold;
+						}
+					}
+				}
+			}
+			.summary-reset {
+				margin: 0 0 20px 0;
+			}
+		}
+	}
+
+	/* Facets - Mobile Summary */
+
+	.mobile-summary {
+		display: none;
+	}
+
+	/* Facets - Summary - Breakpoint 1 (default: 767) */
+
+	@include respond($facets-summary-bp1-width) {
+		.mobile-summary {
+			display: block;
+		}
+		@if $facets-summary-style == style2 {
+			.searchspring-summary .summary-container ul {
+				margin: 0 -1% 5px -1%;
+				li {
+					margin: 0 1% 5px 1%;
+					width: 48%;
+					@include inline-block(middle);
+				}
+			}
+		}
+	}
+
+	/* Facets - Summary - Breakpoint 2 (default: 480) */
+
+	@include respond($facets-summary-bp2-width) {
+		.searchspring-summary .summary-container ul li {
+			width: auto;
+			display: block;
+		}
+	}
+}
+
+// facet container
+.searchspring-facets {
+
+}
+
+// filter messages
+.searchspring-filter_messages {
+	h3 {
+
+	}
+	p {
+
+	}
+}

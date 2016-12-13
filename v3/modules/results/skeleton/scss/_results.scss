@@ -1,0 +1,26 @@
+/* results default scss */
+@import "._variables.scss";
+
+$results_module: true;
+
+#searchspring-merch_header img,
+#searchspring-merch_banner img,
+#searchspring-merch_footer img {
+	max-width: 100%;
+}
+
+.searchspring-items {
+
+}
+
+.searchspring-no_results {
+	.did-you-mean {
+		a {
+
+		}
+	}
+
+	.contact {
+
+	}
+}

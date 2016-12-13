@@ -1,7 +1,6 @@
 /* autocomplete default scss */
 @import "._variables.scss";
 @import "_variables.scss";
-@import "_mixins.scss";
 
 $autocomplete_module: true;
 
@@ -14,9 +13,17 @@ $autocomplete_module: true;
 	* {
 		@include box-sizing;
 	}
+}
+
+/* AutoComplete - Resets */
+
+[ss-autocomplete] {
 	ul, ul li {
 		@include reset;
 		list-style: none;
+	}
+	#ss-ac-facets .facet-container h4, #ss-ac-results h4 {
+		padding: 0;
 	}
 }
 
@@ -123,28 +130,26 @@ $autocomplete_module: true;
 	padding: 0 20px 0 0;
 	.facet-container {
 		h4 {
+			margin: 0 0 5px 0;
 			color: $ac-color-06;
 			font-family: $ac-font-02;
 			font-weight: $ac-facets-h4-weight;
 			font-size: $ac-facets-h4-font-size;
-			margin: 0 0 10px 0;
-			padding: 0;
+			@if $ac-facets-h4-transform != none {
+				text-transform: $ac-facets-h4-transform;
+			}
 		}
 		ul {
 			margin: 0 0 10px 0;
-			padding: 0 0 10px 0;
 			@if $ac-facets-ul-border-on == true {
 				border-bottom: 1px solid $ac-color-07;
+				padding: 0 0 10px 0;
 			}
 			li {
 				a {
-					margin: 0 0 5px 0;
-					font-size: $ac-facets-option-font-size;
+					margin: 0 0 3px 0;
 					display: block;
 					color: $ac-color-03;
-				}
-				&:last-child a {
-					margin: 0 0 3px 0;
 				}
 			}
 		}
@@ -217,23 +222,25 @@ $autocomplete_module: true;
 [ss-autocomplete] #ss-ac-results {
 	overflow: hidden;
 	h4 {
+		margin: 0 0 10px 0;
 		color: $ac-color-14;
 		font-family: $ac-font-02;
 		font-weight: $ac-results-h4-weight;
 		font-size: $ac-results-h4-font-size;
-		margin: 0 0 10px 0;
-		padding: 0;
+		@if $ac-results-h4-transform != none {
+			text-transform: $ac-results-h4-transform;
+		}
 		strong {
 			color: $ac-color-15;
 		}
 	}
 	.item-results {
-		margin: 0 -10px -20px -10px;
+		margin: 0 -5px -10px -5px;
 		li {
 			width: $ac-results-li-width;
 			@include inline-block(top);
-			margin: 0 0 20px 0;
-			padding: 0 10px;
+			margin: 0 0 10px 0;
+			padding: 0 5px;
 			& > a {
 				display: block;
 				text-decoration: none;
@@ -267,7 +274,6 @@ $autocomplete_module: true;
 					color: $ac-color-16;
 				}
 				.item-price {
-					font-size: $ac-results-price-font-size;
 					.regular {
 						color: $ac-color-17;
 						font-weight: $ac-results-regular-weight;
@@ -306,9 +312,6 @@ $autocomplete_module: true;
 					vertical-align: middle;
 					text-align: center;
 					width: $ac-bp1-terms-width;
-					a {
-						font-size: $ac-terms-font-size - 2;
-					}
 				}
 			}
 		}
@@ -324,9 +327,6 @@ $autocomplete_module: true;
 /* AutoComplete - Breakpoint 2 (default: 767) */
 
 @include respond($ac-bp2-width) {
-	#{$ac-search-input} {
-		font-size: 16px;
-	}
 	[ss-autocomplete] {
 			margin: auto;
 			left: 0;
@@ -337,30 +337,29 @@ $autocomplete_module: true;
 		#ss-ac-terms, #ss-ac-content {
 			width: auto;
 		}
+		#ss-ac-content {
+			padding: 10px;
+		}
 		#ss-ac-terms ul li a {
 			padding: 5px 10px;
+			font-size: $ac-terms-font-size - 2;
 		}
 		#ss-ac-facets {
 			width: auto;
 			float: none;
 			padding: 0;
-			margin: 0 -10px;
+			margin: 0 -5px;
 			.facet-container {
 				width: $ac-bp2-facets-width;
 				@include inline-block(top);
-				padding: 0 10px;
+				padding: 0 5px;
 				h4 {
 					font-size: $ac-facets-h4-font-size - 2;
 				}
-				ul {
-					padding: 0;
-					@if $ac-facets-ul-border-on == true {
+				@if $ac-facets-ul-border-on == true {
+					ul {
 						border: 0;
-					}
-					li {
-						a {
-							font-size: $ac-facets-option-font-size - 1;
-						}
+						padding: 0;
 					}
 				}
 				&:last-child ul {
@@ -371,12 +370,12 @@ $autocomplete_module: true;
 		#ss-ac-results {
 			overflow: visible;
 			h4 {
-				font-size: $ac-results-h4-font-size - 8;
+				font-size: $ac-results-h4-font-size - 4;
 			}
-			.item-results {
-				margin: 0 -10px -10px -10px;
-				li {
-					margin: 0 0 10px 0;
+			.item-results li .item-image {
+				height: $ac-bp2-image-height;
+				.image-wrapper img {
+					max-height: $ac-bp2-image-height;
 				}
 			}
 		}
@@ -390,12 +389,31 @@ $autocomplete_module: true;
 
 @include respond($ac-bp3-width) {
 	[ss-autocomplete] {
-		#ss-ac-terms ul li a {
-			padding: 4px 8px;
-			font-size: $ac-terms-font-size - 4;
+		#ss-ac-terms {
+			padding: 8px;
+			border-bottom: 1px solid $ac-color-02;
+			ul {
+				display: block;
+				width: auto;
+				margin: 0 -4px -4px -4px;
+				&, li {
+					text-align: left;
+				}
+				li {
+					@include inline-block(top);
+					width: 33.33%;
+					&.active {
+						background: none;
+					}
+					a {
+						padding: 0 4px 4px 4px;
+						font-size: $ac-terms-font-size - 4;
+					}
+				}
+			}
 		}
 		#ss-ac-content {
-			padding: 10px;
+			padding: 8px;
 		}
 		#ss-ac-facets {
 			display: none;
@@ -404,8 +422,16 @@ $autocomplete_module: true;
 			h4 {
 				display: none;
 			}
-			.item-results li {
-				width: 50%;
+			.item-image, .item-results li .item-details p {
+				margin: 0 0 4px 0;
+			}
+			.item-results {
+				margin: 0 -4px -8px -4px;
+				li {
+					width: 50%;
+					margin: 0 0 8px 0;
+					padding: 0 4px;
+				}
 			}
 		}
 	}

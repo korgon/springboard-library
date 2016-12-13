@@ -1,0 +1,30 @@
+// Facets Default Variables
+//
+// 01. Change variables. Yay!
+// 02. Variables with true/false values can turn on or off a style.
+// 03. Values set to '' can be left blank so they don't generate extra styles.
+
+// Colors
+$facets-color-01: #333333; // summary background color
+$facets-color-02: #49669e; // summary background hover color
+$facets-color-03: #ffffff; // summary font color
+$facets-color-04: #ffffff; // summary "x" color
+
+// Summary
+$facets-summary-on: true;
+$facets-summary-style: style1;  // style1 ("pill style" dark backround with "x" icon) or style2 (rounded "x" icon)
+$facets-summary-style1-padding: 5px 10px 5px 30px;
+$facets-summary-style1-size: 12px;
+$facets-summary-style1-top: 10px;
+$facets-summary-style1-left: 10px;
+$facets-summary-style2-padding: 0 0 0 25px;
+$facets-summary-style2-size: 16px;
+$facets-summary-style2-top: 2.5px;
+$facets-summary-style2-left: 0;
+$facets-summary-bp1-width: 767 !default;
+$facets-summary-bp2-width: 480;
+
+// Connected
+@if variable-exists(slideout-width) {
+	$facets-summary-bp1-width: $slideout_width;
+}

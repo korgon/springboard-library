@@ -1,8 +1,8 @@
 {
 	"type": "v3/compare",
 	"version": "1.0.0",
-	"priority": 6,
 	"description": "compare items in result set",
+	"priority": 6,
 	"enabled": true,
 	"theme": null
 }

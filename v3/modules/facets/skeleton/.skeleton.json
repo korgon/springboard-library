@@ -1,7 +1,7 @@
 {
-	"type": "v3/facet-slider/default",
+	"type": "v3/facets/skeleton",
 	"version": "1.0.0",
-	"description": "default facet-slider style",
+	"description": "skeleton facets theme",
 	"author": "searchspring",
 	"requires": ["v3/mixins/default"]
 }

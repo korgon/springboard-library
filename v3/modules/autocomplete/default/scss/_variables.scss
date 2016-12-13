@@ -82,7 +82,7 @@ $ac-terms-em-weight: bold;
 $ac-facets-width: 175px;
 $ac-facets-h4-font-size: $ac-font-size + 4;
 $ac-facets-h4-weight: normal;
-$ac-facets-option-font-size: $ac-font-size + 1;
+$ac-facets-h4-transform: none;
 $ac-facets-ul-border-on: true;
 $ac-facets-checks-on: true;
 $ac-facets-checks-style: style1; // style1 (checkmark), style2 (colored square), or style3 ("x" icon)
@@ -97,12 +97,12 @@ $ac-facets-palette-border: true;
 $ac-facets-grid-on: true;
 
 // Results
-$ac-results-h4-font-size: $ac-font-size + 10;
+$ac-results-h4-font-size: $ac-font-size + 6;
 $ac-results-h4-weight: normal;
+$ac-results-h4-transform: none;
 $ac-results-li-width: 33.33%;
-$ac-results-image-height: 130px;
+$ac-results-image-height: 100px;
 $ac-results-image-border-on: true;
-$ac-results-price-font-size: $ac-font-size + 2;
 $ac-results-regular-weight: bold;
 $ac-results-retail-decoration: line-through;
 $ac-results-sale-weight: bold;
@@ -110,11 +110,12 @@ $ac-results-sale-weight: bold;
 // Breakpoint 1
 $ac-bp1-width: 1099;
 $ac-bp1-terms-width: auto;
-$ac-bp1-image-height: 100px;
+$ac-bp1-image-height: 75px;
 
 // Breakpoint 2
 $ac-bp2-width: 767;
 $ac-bp2-facets-width: 33.33%;
+$ac-bp2-image-height: 50px;
 
 // Breakpoint 3
 $ac-bp3-width: 480;

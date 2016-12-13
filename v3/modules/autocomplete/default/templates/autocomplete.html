@@ -31,7 +31,7 @@
 					</ul>
 
 					<ul ng-switch-default>
-						<li ng-repeat="value in facet.values | limitTo:6" ng-class="{active: value.active}">
+						<li ng-repeat="value in facet.values | limitTo:5" ng-class="{active: value.active}">
 								<a href="{{ value.url }}" ss-nav-selectable ng-focus="value.preview()">{{ value.label }}</a>
 						</li>
 					</ul>
@@ -55,7 +55,9 @@
 									</div>
 								</div>
 								<div class="item-details">
-									<p class="item-name">{{ result.name }}</p>
+									<p class="item-name">
+										{{ result.name.length > 40 ? (result.name.substring(0, 37) + '...') : result.name }}
+									</p>
 									<p class="item-price">
 										<span class="msrp" ng-if="(result.msrp * 1) > (result.price * 1) && result.msrp">${{ result.msrp | number:2 }}</span>
 										<span class="regular" ng-class="{'on-sale': (result.msrp * 1) > (result.price * 1) && result.msrp}">${{ result.price | number:2 }}</span>

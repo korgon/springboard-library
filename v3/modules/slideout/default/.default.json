@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "default slideout style",
 	"author": "searchspring",
+	"requires": ["v3/mixins/default"],
 	"variables": {
 		"width": {
 			"value": 767,
