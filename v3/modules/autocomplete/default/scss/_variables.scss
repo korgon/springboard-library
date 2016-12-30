@@ -25,28 +25,6 @@ $ac-color-17: #49669e; // regular price
 $ac-color-18: #49669e; // sale price
 $ac-color-19: #999999; // msrp price
 
-@if variable-exists(color1) {
-	$ac-color-05: $color1;
-	$ac-color-06: $color1;
-	$ac-color-09: $color1;
-	$ac-color-11: $color1;
-	$ac-color-13: $color1;
-	$ac-color-14: $color1;
-	$ac-color-17: $color1;
-	$ac-color-18: $color1;
-}
-@if variable-exists(color2) {
-	$ac-color-03: $color2;
-	$ac-color-08: $color2;
-	$ac-color-10: $color2;
-	$ac-color-12: $color2;
-	$ac-color-15: $color2;
-	$ac-color-16: $color2;
-}
-@if variable-exists(color3) {
-	$ac-color-4: $color3;
-}
-
 // Fonts
 $ac-font-01: tahoma, arial, sans-serif;
 $ac-font-02: garamond, 'times new roman', serif;

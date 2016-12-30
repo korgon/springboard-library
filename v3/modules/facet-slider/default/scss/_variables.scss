@@ -16,15 +16,3 @@ $slider-color-07: #333333; // slider error icon color
 
 // Slider
 $slider-style: style1; // style1 (values above slider) or style2 (values below slider)
-
-@if variable-exists(color1) {
-	$slider-color-02: $color1 + #222;
-	$facets-color-03: $color1;
-}
-@if variable-exists(color2) {
-	$slider-color-01: $color2;
-	$slider-color-04: $color2;
-	$slider-color-07: $color2;
-}
-@if variable-exists(color3) {
-}

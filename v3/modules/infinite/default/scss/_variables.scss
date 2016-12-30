@@ -7,11 +7,3 @@
 
 // Colors
 $infinite-color-01: #49669e;
-
-@if variable-exists(color1) {
-	$infinite-color-01: $color1;
-}
-@if variable-exists(color2) {
-}
-@if variable-exists(color3) {
-}

@@ -63,21 +63,3 @@ $facets-summary-bp2-width: 480;
 @if variable-exists(slideout-width) {
 	$facets-summary-bp1-width: $slideout_width;
 }
-
-@if variable-exists(color1) {
-	$facets-color-01: $color1;
-	$facets-color-03: $color1;
-	$facets-color-05: $color1;
-	$facets-color-07: $color1;
-	$facets-color-09: $color1;
-}
-@if variable-exists(color2) {
-	$facets-color-02: $color2;
-	$facets-color-04: $color2;
-	$facets-color-06: $color2;
-	$facets-color-08: $color2;
-}
-@if variable-exists(color3) {
-	$facets-color-10: $color3;
-	$facets-color-11: $color3;
-}
