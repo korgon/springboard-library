@@ -1,7 +1,7 @@
 <!-- Results & No Results -->
 <script type="text/ss-template" module="search" target=".content-target-selector">
 	<div ng-if="pagination.totalResults" class="searchspring-results">
-		<div id="searchspring-merch_banner" ss-merchandising="banner"></div>
+		<div id="searchspring-merch_header" ss-merchandising="header"></div>
 
 		<h2 ng-if="pagination.totalResults > 1" class="results-title">
 			Showing {{ pagination.begin }} - {{ pagination.end }} of {{ pagination.totalResults }} <span ng-if="q">search results for "{{ q }}"</span><span ng-if="!q">items</span>
@@ -10,7 +10,7 @@
 			Showing 1 <span ng-if="q">search result for "{{ q }}"</span><span ng-if="!q">item</span>
 		</h2>
 
-		<div id="searchspring-merch_header" ss-merchandising="header"></div>
+		<div id="searchspring-merch_banner" ss-merchandising="banner"></div>
 
 		<div ng-if="filterSummary.length" class="mobile-summary">
 			<div class="searchspring-summary"></div>

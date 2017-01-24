@@ -69,7 +69,7 @@ $slideout_module: true;
 /* Slideout - Breakpoint 1 (default: 767) */
 
 @include respond($slideout-bp1-width) {
-	body .searchspring-slideout_button.searchspring-slideout_filter {
+	.searchspring-slideout_button.searchspring-slideout_filter {
 		display: block;
 	}
 }
