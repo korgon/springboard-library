@@ -51,7 +51,7 @@
 				</a>
 			</li>
 		</ul>
-		<div ng-switch-when="slider" class="searchspring-range-slider"></div>
+		<div ng-switch-when="slider" class="facet-range-slider"></div>
 		<ul ng-switch-default>
 			<li ng-repeat="value in facet.values | filter:facet.search | limitTo:facet.overflow.limit">
 				<a href="{{ value.url }}" ng-class="{'highlight': value.active}">

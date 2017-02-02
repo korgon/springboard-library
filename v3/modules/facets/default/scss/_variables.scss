@@ -44,6 +44,7 @@ $facets-palette-radius: true;
 $facets-palette-border: true;
 $facets-grid-on: true;
 $facets-price-input: true;
+$facets-respond: 767 !default;
 
 // Summary
 $facets-summary-on: true;
@@ -62,4 +63,5 @@ $facets-summary-bp2-width: 480;
 // Connected
 @if variable-exists(slideout-width) {
 	$facets-summary-bp1-width: $slideout_width;
+	$facets-respond: $slideout_width;
 }
