@@ -16,19 +16,6 @@ $autocomplete_module: true;
 	}
 }
 
-.searchspring-query + [ss-autocomplete] {
-	display: none;
-}
-
-.searchspring-query.ss-ac-open + [ss-autocomplete] {
-	display: block;
-}
-
-.searchform-wrapper .searchspring-query + [ss-autocomplete] {
-    left: 112px;
-    right: auto;
-    top: 55px;
-}
 
 /* AutoComplete - Resets */
 
@@ -184,7 +171,7 @@ $autocomplete_module: true;
 				.item-image {
 					float: left;
 					@include sizing($ac-results-image-size, $ac-results-image-size);
-					padding: 0 10px 0 0;
+					margin: 0 10px 0 0;
 					.image-wrapper img {
 						max-width: 100%;
 						max-height: 100%;
