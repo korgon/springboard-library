@@ -1,0 +1,80 @@
+// Autocomplete Mini Variables
+
+// 01. Change variables. Yay!
+// 02. Variables with true/false values can turn on or off a style.
+// 03. Values set to '' can be left blank so they don't generate extra styles.
+
+// Colors
+$ac-color-01: #ffffff; // wrapper background color
+$ac-color-02: #ececec; // wrapper border color
+$ac-color-03: #767676; // wrapper font color
+$ac-color-04: #fafafa; // alternating terms/results background color (even class)
+$ac-color-05: #49669e; // active and focus color
+$ac-color-06: #49669e; // terms and results title background
+$ac-color-07: #ffffff; // terms and results title font
+$ac-color-08: #eeeeee; // terms and results selected/hover background color
+$ac-color-09: #49669e; // terms em color
+$ac-color-10: #767676; // item name
+$ac-color-11: #464646; // regular price
+$ac-color-12: #464646; // sale price
+$ac-color-13: #767676; // msrp price
+$ac-color-14: #7587aa; // see more background color
+$ac-color-15: #ffffff; // see more font color
+$ac-color-16: #333333; // see more background hover color
+$ac-color-17: #ffffff; // see more font hover color
+
+// Fonts
+$ac-font-01: arial,verdana,sans-serif;
+$ac-font-02: arial,verdana,sans-serif;
+$ac-font-size: 12px;
+
+// AutoComplete
+$ac-right: auto;
+$ac-left: 0;
+$ac-top: 40px;
+$ac-width: 280px;
+
+// Arrow
+$ac-arrow: true;
+$ac-arrow-size: 7px;
+$ac-arrow-left: 9px;
+$ac-arrow-right: auto;
+
+// Wrapper
+$ac-wrapper-border-on: true;
+$ac-wrapper-padding: 3px;
+
+// Active and focus states
+$ac-focused-decoration: underline;
+$ac-focused-style: ''; // Refers to font-style property
+$ac-focused-weight: '';
+
+// Terms and Results Title
+$ac-title-font-size: $ac-font-size + 2;
+$ac-title-font-weight: bold;
+$ac-title-transform: uppercase;
+$ac-title-padding: 6px;
+
+// Terms
+$ac-terms-width: 150px;
+$ac-terms-font-size: $ac-font-size + 4;
+$ac-terms-em-style: normal; // Refers to font-style property
+$ac-terms-em-weight: bold;
+$ac-terms-padding: 6px;
+
+// Results
+$ac-results-image-size: 60px;
+$ac-results-regular-weight: normal;
+$ac-results-retail-decoration: line-through;
+$ac-results-sale-weight: normal;
+$ac-results-padding: 6px;
+
+// See More Results
+$ac-more-font-size: $ac-font-size;
+$ac-more-font-weight: bold;
+$ac-more-transform: initial;
+$ac-more-strong-style: italic;
+$ac-more-padding: 6px;
+
+// Breakpoint 1
+$ac-bp1-width: 767;

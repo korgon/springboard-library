@@ -1,0 +1,39 @@
+<!-- AutoComplete -->
+<script type="text/ss-template" target="[ss-autocomplete]">
+	<div class="ss-ac-wrapper" ng-show="ac.visible">
+		<div id="ss-ac-terms" ng-show="ac.terms.length">
+			<h4>Search Suggestions</h4>
+			<ul>
+				<li ng-repeat="term in ac.terms" ng-class="{ active: term.active, odd: $odd, even: $even }">
+					<a ng-bind-html="term.label | trusted" ss-nav-selectable href="{{ term.url }}"></a>
+				</li>
+			</ul>
+		</div>
+		<div id="ss-ac-results" ng-show="ac.results.length">
+			<h4>Products</h4>
+			<ul class="item-results">
+				<li class="item" ng-repeat="result in ac.results | limitTo:4" ng-class="{ odd: $odd, even: $even }">
+					<a ng-href="{{ result.url }}" ss-nav-selectable ng-focus="value.preview()">
+						<div class="item-image">
+							<div class="image-wrapper">
+								<img ng-src="{{ result.thumbnailImageUrl ? result.thumbnailImageUrl : '//cdn.searchspring.net/ajax_search/img/missing-image-75x75.gif' }}" onerror="this.src='//cdn.searchspring.net/ajax_search/img/default_image.png';" alt="{{ result.name }}" title="{{ result.name }}" />
+							</div>
+						</div>
+						<div class="item-details">
+							<p class="item-name">
+								{{ result.name.length > 60 ? (result.name.substring(0, 57) + '...') : result.name }}
+							</p>
+							<p class="item-price">
+								<span class="msrp" ng-if="(result.msrp * 1) > (result.price * 1) && result.msrp">${{ result.msrp | number:2 }}</span>
+								<span class="regular" ng-class="{ 'on-sale': (result.msrp * 1) > (result.price * 1) && result.msrp }">${{ result.price | number:2 }}</span>
+							</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ss-ac-more" ng-show="ac.terms.length">
+			<a href="{{ ac.terms[0].url }}"><h4 ss-nav-selectable>See more results for <strong>"{{ ac.q }}"</strong> &rsaquo;</h4></a>
+		</div>
+	</div>
+</script>

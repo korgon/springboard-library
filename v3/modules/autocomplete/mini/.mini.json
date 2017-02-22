@@ -1,0 +1,29 @@
+{
+    "type": "v3/autocomplete/mini",
+    "version": "1.0.0",
+    "description": "mini autocomplete style",
+    "author": "searchspring",
+    "requires": [
+        "v3/mixins/default"
+    ],
+    "variables": {
+        "input": {
+            "value": "input#searchspring-query_field",
+            "default": "input.searchspring-ac",
+            "type": "string",
+            "description": "css selector to target"
+        },
+        "action": {
+            "value": "",
+            "default": "",
+            "type": "string",
+            "description": "optional to override the form action"
+        },
+        "autoPosition": {
+            "value": false,
+            "default": "false",
+            "type": "boolean",
+            "description": "autoposition dropdown"
+        }
+    }
+}

@@ -1,6 +1,6 @@
 {
 	"type": "v3/autocomplete/default",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "default autocomplete style",
 	"author": "searchspring",
 	"requires": ["v3/mixins/default"],
@@ -16,6 +16,12 @@
 			"default": "",
 			"type": "string",
 			"description": "optional to override the form action"
+		},
+		"autoPosition": {
+				"value": false,
+				"default": "false",
+				"type": "boolean",
+				"description": "autoposition dropdown"
 		}
 	}
 }

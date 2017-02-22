@@ -1,0 +1,277 @@
+/* autocomplete mini scss */
+@import "._variables.scss";
+@import "_variables.scss";
+
+$autocomplete_module: true;
+
+[ss-autocomplete] {
+	z-index: 999999;
+	position: absolute;
+	right: $ac-right;
+	left: $ac-left;
+	top: $ac-top;
+	width: $ac-width;
+	* {
+		@include box-sizing;
+	}
+}
+
+.searchspring-query + [ss-autocomplete] {
+	display: none;
+}
+
+.searchspring-query.ss-ac-open + [ss-autocomplete] {
+	display: block;
+}
+
+.searchform-wrapper .searchspring-query + [ss-autocomplete] {
+    left: 112px;
+    right: auto;
+    top: 55px;
+}
+
+/* AutoComplete - Resets */
+
+[ss-autocomplete] {
+	ul, ul li {
+		@include reset;
+		list-style: none;
+	}
+	#ss-ac-terms, #ss-ac-results, #ss-ac-more {
+		h4 {
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+
+/* AutoComplete - Wrapper */
+
+[ss-autocomplete] .ss-ac-wrapper {
+	position: relative;
+	font-family: $ac-font-01;
+	text-transform: none;
+	background: $ac-color-01;
+	padding: $ac-wrapper-padding;
+	line-height: 1.5;
+	text-align: left;
+	@if $ac-wrapper-border-on {
+		border: 1px solid $ac-color-02;
+	}
+	&, a {
+		color: $ac-color-03;
+		font-size: $ac-font-size;
+	}
+}
+
+/* AutoComplete - Arrow */
+
+@if $ac-arrow {
+	[ss-autocomplete] .ss-ac-wrapper {
+		&:before, &:after {
+			content: '';
+			position: absolute;
+			width: 0;
+			height: 0;
+		}
+		&:before {
+			left: $ac-arrow-left;
+			right: $ac-arrow-right;
+			top: -$ac-arrow-size;
+			background: none;
+			border-right: ($ac-arrow-size + 2px) inset transparent;
+			border-left: ($ac-arrow-size + 2px) inset transparent;
+			border-bottom: $ac-arrow-size solid $ac-color-02;
+		}
+		&:after {
+			@if $ac-arrow-left != 'auto' {
+				left: $ac-arrow-left + 2px;
+			} else {
+				left: $ac-arrow-left;
+			}
+			@if $ac-arrow-right != 'auto' {
+				left: $ac-arrow-right + 2px;
+			} else {
+				left: $ac-arrow-right;
+			}
+			top: -($ac-arrow-size - 1px);
+			background: none;
+			border-right: $ac-arrow-size inset transparent;
+			border-left: $ac-arrow-size inset transparent;
+			border-bottom: ($ac-arrow-size - 1px) solid $ac-color-01;
+		}
+	}
+}
+
+/* AutoComplete - Active and focus states */
+
+[ss-autocomplete] {
+	#ss-ac-terms ul li.active a, #ss-ac-results .item-results li a.ss-focused .item-details .item-name {
+		color: $ac-color-05;
+	}
+	@if $ac-focused-decoration or $ac-focused-style or $ac-focused-weight {
+		#ss-ac-terms ul li a.ss-focused, #ss-ac-results .item-results li a.ss-focused .item-details .item-name {
+			@if $ac-focused-decoration != '' {
+				text-decoration: $ac-focused-decoration;
+			}
+			@if $ac-focused-style != '' {
+				font-style: $ac-focused-style;
+			}
+			@if $ac-focused-weight != '' {
+				font-weight: $ac-focused-weight;
+			}
+		}
+	}
+}
+
+/* AutoComplete - Terms and Results */
+
+[ss-autocomplete] {
+	#ss-ac-terms, #ss-ac-results {
+		h4 {
+			padding: $ac-title-padding;
+			background: $ac-color-06;
+			color: $ac-color-07;
+			font-size: $ac-title-font-size;
+			font-family: $ac-font-02;
+			font-weight: $ac-title-font-weight;
+			@if $ac-title-transform != none {
+				text-transform: $ac-title-transform;
+			}
+		}
+	}
+}
+
+/* AutoComplete - Terms */
+
+[ss-autocomplete] #ss-ac-terms {
+	ul {
+		li {
+			&.even {
+				background-color: $ac-color-04;
+			}
+			a {
+				&:hover, &.ss-focused {
+					background-color: $ac-color-08;
+				}
+				padding: $ac-terms-padding;
+				display: block;
+				em {
+					color: $ac-color-09;
+					font-style: $ac-terms-em-style;
+					font-weight: $ac-terms-em-weight;
+				}
+			}
+		}
+	}
+}
+
+/* AutoComplete - Results */
+
+[ss-autocomplete] #ss-ac-results {
+	ul {
+		li {
+			&.even {
+				background-color: $ac-color-04;
+			}
+			a {
+				&:hover, &.ss-focused {
+					background-color: $ac-color-08;
+				}
+				padding: $ac-results-padding;
+				display: block;
+				@include clearfix('&');
+				.item-image {
+					float: left;
+					@include sizing($ac-results-image-size, $ac-results-image-size);
+					padding: 0 10px 0 0;
+					.image-wrapper img {
+						max-width: 100%;
+						max-height: 100%;
+					}
+				}
+				.item-details {
+					overflow: hidden;
+					p {
+						margin: 0 0 5px 0;
+						&:last-child {
+							margin: 0;
+						}
+					}
+					.item-name, .item-name a {
+						color: $ac-color-10;
+					}
+					.item-price {
+						font-family: $ac-font-02;
+						span {
+							position: static;
+							opacity: 1;
+						}
+						.regular {
+							color: $ac-color-11;
+							font-weight: $ac-results-regular-weight;
+						}
+						.regular.on-sale {
+							color: $ac-color-12;
+							font-weight: $ac-results-sale-weight;
+						}
+						.msrp {
+							text-decoration: $ac-results-retail-decoration;
+							color: $ac-color-13;
+							padding: 0 5px 0 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* AutoComplete - See More Results */
+
+[ss-autocomplete] {
+	#ss-ac-more {
+		a {
+			text-decoration: none;
+			h4 {
+				cursor: pointer;
+				padding: $ac-more-padding;
+				background: $ac-color-14;
+				color: $ac-color-15;
+				font-size: $ac-more-font-size;
+				font-family: $ac-font-01;
+				font-weight: $ac-more-font-weight;
+				text-align: center;
+				@if $ac-more-transform != none {
+					text-transform: $ac-more-transform;
+				}
+				strong {
+					font-style: $ac-more-strong-style;
+				}
+				&:hover, &.ss-focused {
+					background: $ac-color-16;
+					color: $ac-color-17;
+				}
+			}
+		}
+	}
+}
+
+
+/* AutoComplete - Breakpoint 1 (default: 767) */
+
+@include respond($ac-bp1-width) {
+	[ss-autocomplete] {
+		margin: auto;
+		width: auto;
+		max-width: 100%;
+		left: 0;
+		right: 0;
+		top: 34px;
+	}
+	.searchform-wrapper .searchspring-query + [ss-autocomplete] {
+		left: 15px;
+		right: 15px;
+		top: 64px;
+	}
+}
