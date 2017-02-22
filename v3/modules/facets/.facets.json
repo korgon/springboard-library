@@ -1,6 +1,5 @@
 {
 	"type": "v3/facets",
-	"version": "1.0.0",
 	"description": "facet template",
 	"enabled": true,
 	"theme": null

@@ -1,6 +1,5 @@
 {
 	"type": "v3/facet-slider",
-	"version": "1.0.0",
 	"description": "make a facet a slider",
 	"enabled": true,
 	"theme": null

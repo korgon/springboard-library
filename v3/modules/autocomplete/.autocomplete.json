@@ -1,6 +1,5 @@
 {
 	"type": "v3/autocomplete",
-	"version": "1.0.0",
 	"description": "rich autocomplete",
 	"enabled": true,
 	"theme": null

@@ -18,10 +18,10 @@
 			"description": "optional to override the form action"
 		},
 		"autoPosition": {
-				"value": false,
-				"default": "false",
-				"type": "boolean",
-				"description": "autoposition dropdown"
+			"value": false,
+			"default": "false",
+			"type": "boolean",
+			"description": "enable auto-positioning of autocomplete dropdown"
 		}
 	}
 }

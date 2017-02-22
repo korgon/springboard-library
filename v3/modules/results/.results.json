@@ -1,6 +1,5 @@
 {
 	"type": "v3/results",
-	"version": "1.0.1",
 	"description": "results template",
 	"enabled": true,
 	"theme": null

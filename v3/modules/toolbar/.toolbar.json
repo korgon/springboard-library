@@ -1,6 +1,5 @@
 {
 	"type": "v3/toolbar",
-	"version": "1.0.0",
 	"description": "toolbar template",
 	"enabled": true,
 	"theme": null

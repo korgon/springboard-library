@@ -1,6 +1,5 @@
 {
 	"type": "v3/infinite",
-	"version": "1.0.0",
 	"priority": 6,
 	"description": "add infinite scroll or 'load more' capability",
 	"enabled": true,
