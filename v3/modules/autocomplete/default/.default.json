@@ -1,6 +1,6 @@
 {
 	"type": "v3/autocomplete/default",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "default autocomplete style",
 	"author": "searchspring",
 	"requires": ["v3/mixins/default"],

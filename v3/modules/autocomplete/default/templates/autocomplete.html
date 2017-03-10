@@ -48,7 +48,7 @@
 					<!-- Items -->
 					<ul class="item-results">
 						<li class="item" ng-repeat="result in ac.results | limitTo:6">
-							<a ng-href="{{ result.url }}" ss-nav-selectable ng-focus="value.preview()">
+							<a ng-href="{{ result.url }}" ss-nav-selectable>
 								<div class="item-image">
 									<div class="image-wrapper">
 										<img ng-src="{{ result.thumbnailImageUrl ? result.thumbnailImageUrl : '//cdn.searchspring.net/ajax_search/img/default_image.png' }}" onerror="this.src='//cdn.searchspring.net/ajax_search/img/default_image.png';" alt="{{ result.name }}" title="{{ result.name }}" />
