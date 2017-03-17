@@ -17,7 +17,7 @@ $slideout-overlay: rgba(0, 0, 0, 0.8);
 $slideout-title-padding: 10px 65px 10px 10px;
 $slideout-facet-padding: 0 10px;
 $slideout-button-top: 10px;
-$slideout-button-left: 10px;
+$slideout-button-right: 10px;
 $slideout-bp1-width: 767;
 
 @if variable-exists(slideout-width) {

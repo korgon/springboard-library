@@ -1,6 +1,6 @@
 {
 	"type": "v3/slideout/default",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "default slideout style",
 	"author": "searchspring",
 	"requires": ["v3/mixins/default"],
