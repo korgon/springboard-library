@@ -10,45 +10,45 @@ $facets_module: true;
 			h4 {
 				padding: $facets-collapse-padding;
 				position: relative;
-					cursor: pointer;
+				cursor: pointer;
+				&:before {
+					position: absolute;
+					content: '';
+					display: block;
+					@include sizing($facets-collapse-size, $facets-collapse-size);
+					right: $facets-collapse-right;
+					left: $facets-collapse-left;
+					top: $facets-collapse-top;
+					background-color: transparent;
+					@include background-svg-properties;
+					@if $facets-collapse-style == style1 {
+						@include background-svg($viewport-width: 25, $fill: $facets-color-01, $path: 'M25.143 13.143v3.43q0 .713-.5 1.213t-1.214.5H16v7.43q0 .713-.5 1.213t-1.214.5h-3.43q-.713 0-1.213-.5t-.5-1.215v-7.43h-7.43q-.713 0-1.213-.5T0 16.573v-3.43q0-.713.5-1.213t1.214-.5h7.43V4q0-.714.5-1.214t1.213-.5h3.43q.713 0 1.213.5T16 4v7.43h7.43q.713 0 1.213.5t.5 1.213z');
+					} @else if $facets-collapse-style == style2 {
+						@include background-svg($fill: $facets-color-01, $path: 'M30.054 23.768l-2.964 2.946q-.34.34-.804.34t-.804-.34L16 17.232l-9.482 9.482q-.34.34-.804.34t-.804-.34l-2.964-2.946q-.34-.34-.34-.813t.34-.813L15.196 8.91q.34-.34.804-.34t.804.34l13.25 13.232q.34.34.34.813t-.34.813z');
+					}
+				}
+				& ~ ul, & ~ div, & ~ .show-more {
+					display: none;
+				}
+				&.open {
 					&:before {
-						position: absolute;
-						content: '';
-						display: block;
-						@include sizing($facets-collapse-size, $facets-collapse-size);
-						right: $facets-collapse-right;
-						left: $facets-collapse-left;
-						top: $facets-collapse-top;
-							background-color: transparent;
-							@include background-svg-properties;
-							@if $facets-collapse-style == style1 {
-								@include background-svg($viewport-width: 25, $fill: $facets-color-01, $path: 'M25.143 13.143v3.43q0 .713-.5 1.213t-1.214.5H16v7.43q0 .713-.5 1.213t-1.214.5h-3.43q-.713 0-1.213-.5t-.5-1.215v-7.43h-7.43q-.713 0-1.213-.5T0 16.573v-3.43q0-.713.5-1.213t1.214-.5h7.43V4q0-.714.5-1.214t1.213-.5h3.43q.713 0 1.213.5T16 4v7.43h7.43q.713 0 1.213.5t.5 1.213z');
+						@if $facets-collapse-style == style1 {
+							@include background-svg($viewport-width: 25, $fill: $facets-color-01, $path: 'M25.143 13.143v3.43q0 .713-.5 1.213t-1.214.5H1.714q-.714 0-1.214-.5T0 16.572v-3.43q0-.713.5-1.213t1.215-.5H23.43q.713 0 1.213.5t.5 1.213z');
 						} @else if $facets-collapse-style == style2 {
-							@include background-svg($fill: $facets-color-01, $path: 'M30.054 23.768l-2.964 2.946q-.34.34-.804.34t-.804-.34L16 17.232l-9.482 9.482q-.34.34-.804.34t-.804-.34l-2.964-2.946q-.34-.34-.34-.813t.34-.813L15.196 8.91q.34-.34.804-.34t.804.34l13.25 13.232q.34.34.34.813t-.34.813z');
+							@include background-svg($fill: $facets-color-01, $path: 'M30.054 14.43l-13.25 13.23q-.34.34-.804.34t-.804-.34L1.946 14.43q-.34-.34-.34-.814t.34-.813L4.91 9.857q.34-.34.804-.34t.804.34L16 19.34l9.482-9.483q.34-.34.804-.34t.804.34l2.964 2.946q.34.34.34.813t-.34.813z');
 						}
 					}
 					& ~ ul, & ~ div, & ~ .show-more {
-						display: none;
+						display: block;
 					}
-					&.open {
-						&:before {
-								@if $facets-collapse-style == style1 {
-								@include background-svg($viewport-width: 25, $fill: $facets-color-01, $path: 'M25.143 13.143v3.43q0 .713-.5 1.213t-1.214.5H1.714q-.714 0-1.214-.5T0 16.572v-3.43q0-.713.5-1.213t1.215-.5H23.43q.713 0 1.213.5t.5 1.213z');
-							} @else if $facets-collapse-style == style2 {
-							@include background-svg($fill: $facets-color-01, $path: 'M30.054 14.43l-13.25 13.23q-.34.34-.804.34t-.804-.34L1.946 14.43q-.34-.34-.34-.814t.34-.813L4.91 9.857q.34-.34.804-.34t.804.34L16 19.34l9.482-9.483q.34-.34.804-.34t.804.34l2.964 2.946q.34.34.34.813t-.34.813z');
-							}
-						}
-						& ~ ul, & ~ div, & ~ .show-more {
-							display: block;
-						}
-					}
+				}
 			}
 		}
 		@if $facets-hierarchy-on == true {
 			&.hierarchy ul li {
 				&.filtered-link a:before {
-						content: '\0000ab';
-						padding: 0 2px 0 0;
+					content: '\0000ab';
+					padding: 0 2px 0 0;
 				}
 				&.filtered-current {
 					font-weight: bold;
@@ -195,7 +195,6 @@ $facets_module: true;
 
 @if $facets-summary-on == true {
 	/* Facets - Summary */
-
 	.searchspring-summary .summary-container {
 		ul {
 			@if $facets-summary-style == style1 {
