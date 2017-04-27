@@ -33,7 +33,7 @@
 			</ul>
 		</div>
 		<div id="ss-ac-more" ng-show="ac.terms.length">
-			<a href="{{ ac.terms[0].url }}"><h4 ss-nav-selectable>See more results for <strong>"{{ ac.q }}"</strong> &rsaquo;</h4></a>
+			<a ng-repeat="term in ac.terms" ng-if="term.active" href="{{ term.url }}"><h4 ss-nav-selectable>See more results for <strong>"{{ ac.q }}"</strong> &rsaquo;</h4></a>
 		</div>
 	</div>
 </script>

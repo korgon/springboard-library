@@ -134,6 +134,9 @@ $autocomplete_module: true;
 [ss-autocomplete] #ss-ac-terms {
 	ul {
 		li {
+			&.active {
+				text-decoration: underline;
+			}
 			&.even {
 				background-color: $ac-color-04;
 			}
