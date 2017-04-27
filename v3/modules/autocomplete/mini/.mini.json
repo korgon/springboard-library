@@ -1,6 +1,6 @@
 {
 	"type": "v3/autocomplete/mini",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "mini autocomplete style",
 	"author": "searchspring",
 	"requires": [

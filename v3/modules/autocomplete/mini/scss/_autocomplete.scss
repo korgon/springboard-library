@@ -77,9 +77,9 @@ $autocomplete_module: true;
 				left: $ac-arrow-left;
 			}
 			@if $ac-arrow-right != 'auto' {
-				left: $ac-arrow-right + 2px;
+				right: $ac-arrow-right + 2px;
 			} else {
-				left: $ac-arrow-right;
+				right: $ac-arrow-right;
 			}
 			top: -($ac-arrow-size - 1px);
 			background: none;
@@ -172,9 +172,14 @@ $autocomplete_module: true;
 					float: left;
 					@include sizing($ac-results-image-size, $ac-results-image-size);
 					margin: 0 10px 0 0;
-					.image-wrapper img {
-						max-width: 100%;
-						max-height: 100%;
+					.image-wrapper {
+						height: 100%;
+						width: 100%;
+						text-align: center;
+						img {
+							max-width: 100%;
+							max-height: 100%;
+						}
 					}
 				}
 				.item-details {
