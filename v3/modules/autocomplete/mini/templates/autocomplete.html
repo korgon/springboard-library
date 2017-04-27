@@ -5,7 +5,7 @@
 			<h4>Search Suggestions</h4>
 			<ul>
 				<li ng-repeat="term in ac.terms" ng-class="{ active: term.active, odd: $odd, even: $even }">
-					<a ng-bind-html="term.label | trusted" ss-nav-selectable href="{{ term.url }}"></a>
+					<a ng-bind-html="term.label | trusted" ss-nav-selectable ng-focus="term.preview()" href="{{ term.url }}"></a>
 				</li>
 			</ul>
 		</div>
