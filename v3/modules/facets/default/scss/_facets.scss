@@ -202,6 +202,7 @@ $facets_module: true;
 			}
 			li {
 				@if $facets-summary-style == style1 {
+					background: $facets-color-08;
 					margin: 0 2.5px 5px 2.5px;
 					@include inline-block(middle);
 					border-radius: 5px;
@@ -212,8 +213,6 @@ $facets_module: true;
 					@include inline-block(top);
 					@if $facets-summary-style == style1 {
 						padding: $facets-summary-style1-padding;
-						@include sizing(100%, 100%);
-						background: $facets-color-08;
 						color: $facets-color-10;
 						&:hover {
 							background: $facets-color-09;
