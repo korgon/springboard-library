@@ -285,6 +285,11 @@ $facets_module: true;
 		.searchspring-summary .summary-container ul li {
 			width: auto;
 			display: block;
+			@if $facets-summary-style == style1 {
+				a {
+					@include sizing(100%, 100%);
+				}
+			}
 		}
 	}
 }
